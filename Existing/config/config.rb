@@ -32,7 +32,7 @@
 #
 ## The ArchivesSpace public interface listens on port 8081 by default.  You can
 ## set it to something else below.
-AppConfig[:public_url] = "http://172.16.223.72:8081"
+AppConfig[:public_url] = "http://localhost:8081"
 #
 ## The ArchivesSpace OAI server listens on port 8082 by default.  You can
 ## set it to something else below.
