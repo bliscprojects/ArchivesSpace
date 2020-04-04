@@ -1,2 +1,0 @@
-class Subject < Record
-end
