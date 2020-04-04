@@ -1,0 +1,230 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Configuring OAI-PMH - ArchivesSpace</title>
+    <link rel="stylesheet" href="/archivesspace/assets/stylesheets/main.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" defer></script>
+    <script src="/archivesspace/assets/javascripts/site.js" type="text/javascript" charset="utf-8" defer></script>
+    <script src="/archivesspace/assets/javascripts/main.js" type="text/javascript" charset="utf-8" defer></script>
+    <link rel="alternate" type="application/atom+xml" href="/blog.xml">
+  </head>
+  <body>
+    <div class="wrapper">
+
+      <header class="top">
+  <div class="row topbar">
+    <h1 id="logo" class="logo">
+  <a href="http://archivesspace.org/" title="ArchivesSpace">ArchivesSpace</a>
+</h1>
+
+    <nav>
+      <ul id="navigation" class="navigation">
+        <li><a href="https://archivesspace.atlassian.net/wiki/display/ADC/ArchivesSpace">Wiki</a></li>
+        <li><a href="http://docs.archivesspace.org">User Docs</a></li>
+        <li class="toggle"><button type="button" id="toggle-menu" class="button--teal">Menu</button></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+      <div id="content" class="row">
+
+        <div id="sidebar" class="sidebar">
+  <div>
+    <!-- <h2>Search</h2> -->
+    <div class="searchbox">
+      <form onsubmit='google_site_search()'>
+        <input type="text" id="google-search" class="searchbox-input" placeholder="Search the docs" />
+      </form>
+
+      <script language="Javascript" type="text/javascript">
+          function google_site_search()
+            {
+                var query = document.getElementById("google-search").value;
+                  window.open("http://google.com/search?q=" + query
+                  + "%20site:" + "http://archivesspace.github.io/archivesspace");
+                  }
+                </script>
+    </div>
+  </div>
+  <!-- <section>
+    <h2>Newsletter</h2>
+    <div id="mc_embed_signup" style="margin-left: 1.5em; margin-top: 0.5em;">
+      <form
+         action="http://travis-ci.us7.list-manage.com/subscribe/post?u=8ce724a4c9af4dace663cd39c&amp;id=44f8dff14c"
+         method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate"
+         target="_blank" novalidate>
+        <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required/>
+        <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+      </form>
+    </div>
+  </section>
+  <section>
+    <h2><a href="http://travis-ci.com/?utm_source=docs.travis-ci.org&utm_medium=referral&utm_content=textlink&utm_campaign=docsite_sidebar">Travis CI for Private Repositories</a></h2>
+  </section> -->
+
+  <section>
+    <h2>Menu</h2>
+    <nav>
+      <ul>
+        <li><a href="/archivesspace/user/system-requirements/">System Requirements</a></li>
+        <li><a href="/archivesspace/user/getting-started/">Getting started</a></li>
+        <li><a href="/archivesspace/user/configuring-archivesspace/">Configuring ArchivesSpace</a></li>
+        <li><a href="/archivesspace/user/upgrading-to-a-new-release-of-archivesspace/">Upgrading ArchivesSpace</a></li>
+        <li><a href="/archivesspace/user/running-archivesspace-as-a-unix-daemon/">Running ArchivesSpace as a Unix daemon</a></li>
+        <li><a href="/archivesspace/user/running-archivesspace-as-a-windows-service/">Running ArchivesSpace as a Windows Service</a></li>
+        <li><a href="/archivesspace/user/running-archivesspace-against-mysql/">Setting up MySQL for Production</a></li>
+        <li><a href="/archivesspace/user/backup-and-recovery/">Backup and Recovery</a></li>
+        <li><a href="/archivesspace/user/re-creating-indexes/">Re-creating your indexes</a></li>
+        <li><a href="/archivesspace/user/resetting-passwords/">Resetting Passwords</a></li>
+        <li><a href="/archivesspace/user/tuning-archivesspace/">Tuning ArchivesSpace</a></li>
+        <li><a href="/archivesspace/user/configuring-ldap-authentication/">Configuring LDAP authentication</a></li>
+        <li><a href="/archivesspace/user/archivesspace-plug-ins-readme/">Plugins and Local Customizations</a></li>
+        <li><a href="/archivesspace/user/running-archivesspace-under-a-prefix/">Deploying under a URL prefix</a></li>
+        <li><a href="/archivesspace/user/running-archivesspace-with-external-solr/">Using an external Solr index</a></li>
+        <li><a href="/archivesspace/user/application-monitoring-with-new-relic/">Monitoring with New Relic</a></li>
+      </ul>
+      <h2>Developer Guides</h2>
+      <ul>
+        <li><a href="/archivesspace/user/archivesspace-architecture-overview">Architecture Overview</a></li>
+        <li><a href="/archivesspace/api">The API</a></li>
+        <li><a href="/archivesspace/user/archivesspace-build-system">Building ArchivesSpace</a></li>
+        <li><a href="/archivesspace/user/selenium-test-suite">Running Selenium Tests</a></li>
+        <li><a href="/archivesspace/doc">Ruby YARD Documentation</a></li>
+        <li><div class="status-circle status">Status:</div>
+          <a href="https://travis-ci.org/archivesspace/archivesspace">Travis CI Status</a>
+        </li>
+      </ul>
+    </nav>
+  </section>
+  <section>
+    <h2>Contact</h2>
+    <ul>
+      <li><a href="https://twitter.com/archivesspace">Twitter</a></li>
+      <li><a href="irc://chat.freenode.net/%23archivesspace">IRC</a></li>
+      <li><a href="http://github.com/archivesspace">GitHub</a></li>
+      <li><a href="mailto:ArchivesSpaceHome@lyrasis.org">Email</a></li>
+    </ul>
+  </section>
+  <section>
+    <h2>Contributing</h2>
+    <p>This documentation site is open source.
+      The <a href="https://github.com/archivesspace/archivesspace/tree/gh-pages">README in our Git repository</a> explains how to contribute.</p>
+      <p>This documentation was based on the <a href="https://travis-ci.org">Travis CI</a> documentation. It uses <a href="https://github.com/jekyll/jekyll">Jekyll</a> and <a href="https://github.com/tripit/slate">Slate</a></p>
+  </section>
+</div><!-- /#sidebar -->
+
+
+        <main id="main" class="main">
+          
+            <h1 class="title">Configuring OAI-PMH</h2>
+          
+          <p>A starter OAI-PMH interface for ArchivesSpace allowing other systems to harvest your records is included in version 2.1.0. Additional features and functionality will be added in later releases.</p>
+
+<p>Information on configuring the OAI-PMH is available at https://github.com/archivesspace/archivesspace#configuring-oai-pmh. By default, it runs on port 8082. A sample request page is available at http://localhost:8082/sample. (To access it, make sure that you have set the AppConfig[:oai_proxy_url] appropriately.)</p>
+
+<p>The system provides responses to a number of standard OAI-PMH requests, including GetRecord, Identify, ListIdentifiers, ListMetadataFormats, ListRecords, and ListSets. Unpublished and suppressed records and elements are not included in any of the OAI-PMH responses.</p>
+
+<p>Some responses require the URL parameter metadataPrefix. There are five different metadata responses available:</p>
+
+<p>EAD	                  oai_ead (resources in EAD)
+  Dublin Core	          oai_dc (archival objects and resources in Dublin Core)
+  extended DCMI Terms	  oai_dcterms (archival objects and resources in DCMI Metadata Terms format)
+  MARC	                oai_marc (archival objects and resources in MARC)
+  MODS	                oai_mods (archival objects and resources in MODS)</p>
+
+<p>The EAD response for resources and MARC response for resources and archival objects use the mappings from the built-in exporter for resources. The DC, DCMI terms, and MODS responses for resources and archival objects use mappings suggested by the community.</p>
+
+<p>Here are some example URLs and other information for these requests:</p>
+
+<p><strong>GetRecord</strong> – needs a record identifier and metadataPrefix</p>
+
+  	http://localhost:8082/oai?verb=GetRecord&amp;identifier=oai:archivesspace//repositories/2/resources/138&amp;metadataPrefix=oai_ead
+
+<p><strong>Identify</strong></p>
+
+  	http://localhost:8082/oai?verb=Identify
+
+<p><strong>ListIdentifiers</strong> – needs a metadataPrefix</p>
+
+  	http://localhost:8082/oai?verb=ListIdentifiers&amp;metadataPrefix=oai_dc
+
+<p><strong>ListMetadataFormats</strong></p>
+
+  	http://localhost:8082/oai?verb=ListMetadataFormats
+
+<p><strong>ListRecords</strong> – needs a metadataPrefix</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://localhost:8082/oai?verb=ListRecords&amp;metadataPrefix=oai_dcterms
+</code></pre></div></div>
+
+<p><strong>ListSets</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://localhost:8082/oai?verb=ListSets
+</code></pre></div></div>
+
+<p>Harvesting the ArchivesSpace OAI-PMH server without specifying a set will yield all published records across all repositories.
+Predefined sets can be accessed using the set parameter. In order to retrieve records from sets include a set parameter in the URL and the DC metadataPrefix, such as “&amp;set=collection&amp;metadataPrefix=oai_dc”. These sets can be from configured sets as shown above or from the following levels of description:</p>
+
+<p>Class	      class
+  Collection	collection
+  File	      file
+  Fonds	      fonds
+  Item	      item
+  Other_Level	otherlevel
+  Record_Group	recordgrp
+  Series	    series
+  Sub-Fonds	  subfonds
+  Sub-Group	  subgrp
+  Sub-Series	 subseries</p>
+
+<p>In addition to the sets based on level of description, you can define sets based on repository codes and/or sponsors in the config/config.rb file:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>AppConfig[:oai_sets] = {
+  	'repository_set' =&gt; {
+	:repo_codes =&gt; ['hello626'],
+	:description =&gt; "A set of one or more repositories",
+  	},
+</code></pre></div></div>
+
+  	‘sponsor_set’ =&gt; {
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	:sponsors =&gt; ['The_Sponsor'],
+	:description =&gt; "A set of one or more sponsors",
+  	},
+}
+</code></pre></div></div>
+
+<p>The interface implements resumption tokens for pagination of results. As an example, the following URL format should be used to page through the results from a ListRecords request:</p>
+
+  	http://localhost:8082/oai?verb=ListRecords&amp;metadataPrefix=oai_ead
+
+<p>using the resumption token:</p>
+
+  	http://localhost:8082/oai?verb=ListRecords&amp;resumptionToken=eyJtZXRhZGF0YV9wcmVmaXgiOiJvYWlfZWFkIiwiZnJvbSI6IjE5NzAtMDEtMDEgMDA6MDA6MDAgVVRDIiwidW50aWwiOiIyMDE3LTA3LTA2IDE3OjEwOjQxIFVUQyIsInN0YXRlIjoicHJvZHVjaW5nX3JlY29yZHMiLCJsYXN0X2RlbGV0ZV9pZCI6MCwicmVtYWluaW5nX3R5cGVzIjp7IlJlc291cmNlIjoxfSwiaXNzdWVfdGltZSI6MTQ5OTM2MTA0Mjc0OX0=
+
+<p>Note: you do not use the metadataPrefix when you use the resumptionToken</p>
+
+<p>The ArchivesSpace OAI-PMH server supports persistent deletes, so harvesters will be notified of any records that were deleted since
+they last harvested.</p>
+
+<p><code class="highlighter-rouge">Mixed content is removed from Dublin Core, dcterms, MARC, and MODS field outputs in the OAI-PMH response (e.g., a scope note mapped to a DC description field would not include &lt;p&gt;, &lt;abbr&gt;, &lt;address&gt;, &lt;archref&gt;, &lt;bibref&gt;, &lt;blockquote&gt;, &lt;chronlist&gt;, &lt;corpname&gt;, &lt;date&gt;, &lt;emph&gt;, &lt;expan&gt;, &lt;extptr&gt;, &lt;extref&gt;, &lt;famname&gt;, &lt;function&gt;, &lt;genreform&gt;, &lt;geogname&gt;, &lt;lb&gt;, &lt;linkgrp&gt;, &lt;list&gt;, &lt;name&gt;, &lt;note&gt;, &lt;num&gt;, &lt;occupation&gt;, &lt;origination&gt;, &lt;persname&gt;, &lt;ptr&gt;, &lt;ref&gt;, &lt;repository&gt;, &lt;subject&gt;, &lt;table&gt;, &lt;title&gt;, &lt;unitdate&gt;, &lt;unittitle&gt;).</code></p>
+
+<p>The component level records include inherited data from superior hierarchical levels of the finding aid. Element inheritance is determined by institutional system configuration (editable in the config/config.rb file) as implemented for the Public User Interface.</p>
+
+<p>ARKs have not yet been implemented, pending more discussion of how they should be formulated.</p>
+
+
+        </main>
+      </div><!-- /#content -->
+
+      <footer>
+  <div class="row">
+  </div>
+</footer>
+
+    </div><!-- /.wrapper -->
+  </body>
+</html>

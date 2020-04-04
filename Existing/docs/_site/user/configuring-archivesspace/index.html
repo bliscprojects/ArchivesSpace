@@ -1,0 +1,744 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Configuring ArchivesSpace - ArchivesSpace</title>
+    <link rel="stylesheet" href="/archivesspace/assets/stylesheets/main.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" defer></script>
+    <script src="/archivesspace/assets/javascripts/site.js" type="text/javascript" charset="utf-8" defer></script>
+    <script src="/archivesspace/assets/javascripts/main.js" type="text/javascript" charset="utf-8" defer></script>
+    <link rel="alternate" type="application/atom+xml" href="/blog.xml">
+  </head>
+  <body>
+    <div class="wrapper">
+
+      <header class="top">
+  <div class="row topbar">
+    <h1 id="logo" class="logo">
+  <a href="http://archivesspace.org/" title="ArchivesSpace">ArchivesSpace</a>
+</h1>
+
+    <nav>
+      <ul id="navigation" class="navigation">
+        <li><a href="https://archivesspace.atlassian.net/wiki/display/ADC/ArchivesSpace">Wiki</a></li>
+        <li><a href="http://docs.archivesspace.org">User Docs</a></li>
+        <li class="toggle"><button type="button" id="toggle-menu" class="button--teal">Menu</button></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+      <div id="content" class="row">
+
+        <div id="sidebar" class="sidebar">
+  <div>
+    <!-- <h2>Search</h2> -->
+    <div class="searchbox">
+      <form onsubmit='google_site_search()'>
+        <input type="text" id="google-search" class="searchbox-input" placeholder="Search the docs" />
+      </form>
+
+      <script language="Javascript" type="text/javascript">
+          function google_site_search()
+            {
+                var query = document.getElementById("google-search").value;
+                  window.open("http://google.com/search?q=" + query
+                  + "%20site:" + "http://archivesspace.github.io/archivesspace");
+                  }
+                </script>
+    </div>
+  </div>
+  <!-- <section>
+    <h2>Newsletter</h2>
+    <div id="mc_embed_signup" style="margin-left: 1.5em; margin-top: 0.5em;">
+      <form
+         action="http://travis-ci.us7.list-manage.com/subscribe/post?u=8ce724a4c9af4dace663cd39c&amp;id=44f8dff14c"
+         method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate"
+         target="_blank" novalidate>
+        <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required/>
+        <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+      </form>
+    </div>
+  </section>
+  <section>
+    <h2><a href="http://travis-ci.com/?utm_source=docs.travis-ci.org&utm_medium=referral&utm_content=textlink&utm_campaign=docsite_sidebar">Travis CI for Private Repositories</a></h2>
+  </section> -->
+
+  <section>
+    <h2>Menu</h2>
+    <nav>
+      <ul>
+        <li><a href="/archivesspace/user/system-requirements/">System Requirements</a></li>
+        <li><a href="/archivesspace/user/getting-started/">Getting started</a></li>
+        <li><a href="/archivesspace/user/configuring-archivesspace/">Configuring ArchivesSpace</a></li>
+        <li><a href="/archivesspace/user/upgrading-to-a-new-release-of-archivesspace/">Upgrading ArchivesSpace</a></li>
+        <li><a href="/archivesspace/user/running-archivesspace-as-a-unix-daemon/">Running ArchivesSpace as a Unix daemon</a></li>
+        <li><a href="/archivesspace/user/running-archivesspace-as-a-windows-service/">Running ArchivesSpace as a Windows Service</a></li>
+        <li><a href="/archivesspace/user/running-archivesspace-against-mysql/">Setting up MySQL for Production</a></li>
+        <li><a href="/archivesspace/user/backup-and-recovery/">Backup and Recovery</a></li>
+        <li><a href="/archivesspace/user/re-creating-indexes/">Re-creating your indexes</a></li>
+        <li><a href="/archivesspace/user/resetting-passwords/">Resetting Passwords</a></li>
+        <li><a href="/archivesspace/user/tuning-archivesspace/">Tuning ArchivesSpace</a></li>
+        <li><a href="/archivesspace/user/configuring-ldap-authentication/">Configuring LDAP authentication</a></li>
+        <li><a href="/archivesspace/user/archivesspace-plug-ins-readme/">Plugins and Local Customizations</a></li>
+        <li><a href="/archivesspace/user/running-archivesspace-under-a-prefix/">Deploying under a URL prefix</a></li>
+        <li><a href="/archivesspace/user/running-archivesspace-with-external-solr/">Using an external Solr index</a></li>
+        <li><a href="/archivesspace/user/application-monitoring-with-new-relic/">Monitoring with New Relic</a></li>
+      </ul>
+      <h2>Developer Guides</h2>
+      <ul>
+        <li><a href="/archivesspace/user/archivesspace-architecture-overview">Architecture Overview</a></li>
+        <li><a href="/archivesspace/api">The API</a></li>
+        <li><a href="/archivesspace/user/archivesspace-build-system">Building ArchivesSpace</a></li>
+        <li><a href="/archivesspace/user/selenium-test-suite">Running Selenium Tests</a></li>
+        <li><a href="/archivesspace/doc">Ruby YARD Documentation</a></li>
+        <li><div class="status-circle status">Status:</div>
+          <a href="https://travis-ci.org/archivesspace/archivesspace">Travis CI Status</a>
+        </li>
+      </ul>
+    </nav>
+  </section>
+  <section>
+    <h2>Contact</h2>
+    <ul>
+      <li><a href="https://twitter.com/archivesspace">Twitter</a></li>
+      <li><a href="irc://chat.freenode.net/%23archivesspace">IRC</a></li>
+      <li><a href="http://github.com/archivesspace">GitHub</a></li>
+      <li><a href="mailto:ArchivesSpaceHome@lyrasis.org">Email</a></li>
+    </ul>
+  </section>
+  <section>
+    <h2>Contributing</h2>
+    <p>This documentation site is open source.
+      The <a href="https://github.com/archivesspace/archivesspace/tree/gh-pages">README in our Git repository</a> explains how to contribute.</p>
+      <p>This documentation was based on the <a href="https://travis-ci.org">Travis CI</a> documentation. It uses <a href="https://github.com/jekyll/jekyll">Jekyll</a> and <a href="https://github.com/tripit/slate">Slate</a></p>
+  </section>
+</div><!-- /#sidebar -->
+
+
+        <main id="main" class="main">
+          
+            <h1 class="title">Configuring ArchivesSpace</h2>
+          
+          <p>The primary configuration for ArchivesSpace is done in the config/config.rb
+file. By default, this file contains the default settings, which are indicated
+by commented out lines ( indicated by the “#” in the file ). You can adjust these
+settings by adding new lines that change the default and restarting
+ArchivesSpace. Be sure that your new settings are not commented out
+( i.e. do NOT start with a “#” ), otherwise the settings will not take effect.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="c1">###############################################################################</span>
+<span class="c1">## This file shows the ArchivesSpace configuration options that are available,</span>
+<span class="c1">## and the default value for each.</span>
+<span class="c1">##</span>
+<span class="c1">## Note that there is no need to uncomment these unless you plan to change the</span>
+<span class="c1">## value from its default.</span>
+<span class="c1">###############################################################################</span>
+
+<span class="c1">##</span>
+<span class="c1">## This section contains the most commonly changed ArchivesSpace settings</span>
+<span class="c1">##</span>
+
+<span class="c1"># Set your database name and credentials here.  Example:</span>
+<span class="c1">#</span>
+<span class="c1">#AppConfig[:db_url] = "jdbc:mysql://127.0.0.1:3306/aspace?useUnicode=true&amp;characterEncoding=UTF-8&amp;user=as&amp;password=as123"</span>
+<span class="c1">#</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:db_url</span><span class="p">]</span> <span class="o">=</span> <span class="nb">proc</span> <span class="p">{</span> <span class="no">AppConfig</span><span class="p">.</span><span class="nf">demo_db_url</span> <span class="p">}</span>
+
+<span class="c1"># Set the maximum number of database connections used by the application.</span>
+<span class="c1"># Default is derived from the number of indexer threads.</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:db_max_connections</span><span class="p">]</span> <span class="o">=</span> <span class="nb">proc</span> <span class="p">{</span> <span class="mi">20</span> <span class="o">+</span> <span class="p">(</span><span class="no">AppConfig</span><span class="p">[</span><span class="ss">:indexer_thread_count</span><span class="p">]</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span> <span class="p">}</span>
+
+<span class="c1"># The ArchivesSpace backend listens on port 8089 by default.  You can set it to</span>
+<span class="c1"># something else below.</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:backend_url</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"http://localhost:8089"</span>
+
+<span class="c1"># The ArchivesSpace staff interface listens on port 8080 by default.  You can</span>
+<span class="c1"># set it to something else below.</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:frontend_url</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"http://localhost:8080"</span>
+
+<span class="c1"># The ArchivesSpace public interface listens on port 8081 by default.  You can</span>
+<span class="c1"># set it to something else below.</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:public_url</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"http://localhost:8081"</span>
+
+<span class="c1"># The ArchivesSpace OAI server listens on port 8082 by default.  You can</span>
+<span class="c1"># set it to something else below.</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:oai_url</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"http://localhost:8082"</span>
+
+<span class="c1"># The ArchivesSpace Solr index listens on port 8090 by default.  You can</span>
+<span class="c1"># set it to something else below.</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:solr_url</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"http://localhost:8090"</span>
+
+<span class="c1"># The ArchivesSpace indexer listens on port 8091 by default.  You can</span>
+<span class="c1"># set it to something else below.</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:indexer_url</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"http://localhost:8091"</span>
+
+<span class="c1"># The ArchivesSpace API documentation listens on port 8888 by default.  You can</span>
+<span class="c1"># set it to something else below.</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:docs_url</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"http://localhost:8888"</span>
+
+<span class="c1"># Logging. By default, this will be output on the screen while the archivesspace</span>
+<span class="c1"># command is running. When running as a daemon/service, this is put into a</span>
+<span class="c1"># file in logs/archivesspace.out. You can change this file by changing the log</span>
+<span class="c1"># value to a filepath that archivesspace has write access to.</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:frontend_log</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"default"</span>
+<span class="c1"># Log level for the frontend, values: (everything) debug, info, warn, error, fatal (severe only)</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:frontend_log_level</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"debug"</span>
+<span class="c1"># Log level for the backend, values: (everything) debug, info, warn, error, fatal (severe only)</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:backend_log</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"default"</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:backend_log_level</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"debug"</span>
+
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:pui_log</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"default"</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:pui_log_level</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"debug"</span>
+
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:indexer_log</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"default"</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:indexer_log_level</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"debug"</span>
+
+
+<span class="c1"># Set to true to log all SQL statements.  Note that this will have a performance</span>
+<span class="c1"># impact!</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:db_debug_log</span><span class="p">]</span> <span class="o">=</span> <span class="kp">false</span>
+<span class="c1"># Set to true if you have enabled MySQL binary logging</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:mysql_binlog</span><span class="p">]</span> <span class="o">=</span> <span class="kp">false</span>
+
+<span class="c1"># By default, Solr backups will run at midnight.  See https://crontab.guru/ for</span>
+<span class="c1"># information about the schedule syntax.</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:solr_backup_schedule</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"0 * * * *"</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:solr_backup_number_to_keep</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:solr_backup_directory</span><span class="p">]</span> <span class="o">=</span> <span class="nb">proc</span> <span class="p">{</span> <span class="no">File</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="no">AppConfig</span><span class="p">[</span><span class="ss">:data_directory</span><span class="p">],</span> <span class="s2">"solr_backups"</span><span class="p">)</span> <span class="p">}</span>
+<span class="c1"># add default solr params, i.e. use AND for search: AppConfig[:solr_params] = { "q.op" =&gt; "AND" }</span>
+<span class="c1"># Another example below sets the boost query value (bq) to boost the relevancy for the query string in the title,</span>
+<span class="c1"># sets the phrase fields parameter (pf) to boost the relevancy for the title when the query terms are in close proximity to</span>
+<span class="c1"># each other, and sets the phrase slop (ps) parameter for the pf parameter to indicate how close the proximity should be</span>
+<span class="c1">#  AppConfig[:solr_params] = {</span>
+<span class="c1">#      "bq" =&gt; proc { "title:\"#{@query_string}\"*" },</span>
+<span class="c1">#      "pf" =&gt; 'title^10',</span>
+<span class="c1">#      "ps" =&gt; 0,</span>
+<span class="c1">#    }</span>
+<span class="c1"># Configuring search operator to be AND by default - ANW-427</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:solr_params</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">"q.op"</span> <span class="o">=&gt;</span> <span class="s2">"AND"</span> <span class="p">}</span>
+
+<span class="c1"># Set the application's language (see the .yml files in</span>
+<span class="c1"># https://github.com/archivesspace/archivesspace/tree/master/common/locales for</span>
+<span class="c1"># a list of available locale codes)</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:locale</span><span class="p">]</span> <span class="o">=</span> <span class="ss">:en</span>
+
+<span class="c1"># Plug-ins to load. They will load in the order specified</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:plugins</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'local'</span><span class="p">,</span>  <span class="s1">'lcnaf'</span><span class="p">]</span>
+
+<span class="c1"># The number of concurrent threads available to run background jobs</span>
+<span class="c1"># Introduced for AR-1619 - long running jobs were blocking the queue</span>
+<span class="c1"># Resist the urge to set this to a big number!</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:job_thread_count</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="c1"># OAI configuration options</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:oai_repository_name</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'ArchivesSpace OAI Provider'</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:oai_proxy_url</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'http://your-public-oai-url.example.com'</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:oai_record_prefix</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'oai:archivesspace'</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:oai_admin_email</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'admin@example.com'</span>
+
+<span class="c1"># In addition to the sets based on level of description, you can define OAI Sets</span>
+<span class="c1"># based on repository codes and/or sponsors as follows</span>
+<span class="c1">#</span>
+<span class="c1"># AppConfig[:oai_sets] = {</span>
+<span class="c1">#   'repository_set' =&gt; {</span>
+<span class="c1">#     :repo_codes =&gt; ['hello626'],</span>
+<span class="c1">#     :description =&gt; "A set of one or more repositories",</span>
+<span class="c1">#   },</span>
+<span class="c1">#</span>
+<span class="c1">#   'sponsor_set' =&gt; {</span>
+<span class="c1">#     :sponsors =&gt; ['The_Sponsor'],</span>
+<span class="c1">#     :description =&gt; "A set of one or more sponsors",</span>
+<span class="c1">#   },</span>
+<span class="c1"># }</span>
+
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:oai_ead_options</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="c1"># alternate example:  AppConfig[:oai_ead_options] = { :include_daos =&gt; true, :use_numbered_c_tags =&gt; true }</span>
+
+<span class="c1">##</span>
+<span class="c1">## Other less commonly changed settings are below</span>
+<span class="c1">##</span>
+
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:default_admin_password</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"admin"</span>
+
+<span class="c1"># NOTE: If you run ArchivesSpace using the standard scripts (archivesspace.sh,</span>
+<span class="c1"># archivesspace.bat or as a Windows service), the value of :data_directory is</span>
+<span class="c1"># automatically set to be the "data" directory of your ArchivesSpace</span>
+<span class="c1"># distribution.  You don't need to change this value unless you specifically</span>
+<span class="c1"># want ArchivesSpace to put its data files elsewhere.</span>
+<span class="c1">#</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:data_directory</span><span class="p">]</span> <span class="o">=</span> <span class="no">File</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="no">Dir</span><span class="p">.</span><span class="nf">home</span><span class="p">,</span> <span class="s2">"ArchivesSpace"</span><span class="p">)</span>
+
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:backup_directory</span><span class="p">]</span> <span class="o">=</span> <span class="nb">proc</span> <span class="p">{</span> <span class="no">File</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="no">AppConfig</span><span class="p">[</span><span class="ss">:data_directory</span><span class="p">],</span> <span class="s2">"demo_db_backups"</span><span class="p">)</span> <span class="p">}</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:solr_index_directory</span><span class="p">]</span> <span class="o">=</span> <span class="nb">proc</span> <span class="p">{</span> <span class="no">File</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="no">AppConfig</span><span class="p">[</span><span class="ss">:data_directory</span><span class="p">],</span> <span class="s2">"solr_index"</span><span class="p">)</span> <span class="p">}</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:solr_home_directory</span><span class="p">]</span> <span class="o">=</span> <span class="nb">proc</span> <span class="p">{</span> <span class="no">File</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="no">AppConfig</span><span class="p">[</span><span class="ss">:data_directory</span><span class="p">],</span> <span class="s2">"solr_home"</span><span class="p">)</span> <span class="p">}</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:solr_indexing_frequency_seconds</span><span class="p">]</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:solr_facet_limit</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span>
+
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:default_page_size</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:max_page_size</span><span class="p">]</span> <span class="o">=</span> <span class="mi">250</span>
+
+<span class="c1"># A prefix added to cookies used by the application.</span>
+<span class="c1">#</span>
+<span class="c1"># Change this if you're running more than one instance of ArchivesSpace on the</span>
+<span class="c1"># same hostname (i.e. multiple instances on different ports)</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:cookie_prefix</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"archivesspace"</span>
+
+<span class="c1"># The periodic indexer can run using multiple threads to take advantage of</span>
+<span class="c1"># multiple CPU cores.</span>
+<span class="c1">#</span>
+<span class="c1"># By setting the next two options, you can control how many CPU cores are used,</span>
+<span class="c1"># and the amount of memory that will be consumed by the indexing process (more</span>
+<span class="c1"># cores and/or more records per thread means more memory used).</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:indexer_records_per_thread</span><span class="p">]</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:indexer_thread_count</span><span class="p">]</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:indexer_solr_timeout_seconds</span><span class="p">]</span> <span class="o">=</span> <span class="mi">300</span>
+
+<span class="c1"># PUI Indexer Settings</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:pui_indexer_enabled</span><span class="p">]</span> <span class="o">=</span> <span class="kp">true</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:pui_indexing_frequency_seconds</span><span class="p">]</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:pui_indexer_records_per_thread</span><span class="p">]</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:pui_indexer_thread_count</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:index_state_class</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'IndexState'</span> <span class="c1"># set to 'IndexStateS3' for amazon s3</span>
+<span class="c1"># # store indexer state in amazon s3 (optional)</span>
+<span class="c1"># # NOTE: s3 charges for read / update requests and the pui indexer is continually</span>
+<span class="c1"># # writing to state files so you may want to increase pui_indexing_frequency_seconds</span>
+<span class="c1"># AppConfig[:index_state_s3] = {</span>
+<span class="c1">#   region: ENV.fetch("AWS_REGION"),</span>
+<span class="c1">#   aws_access_key_id: ENV.fetch("AWS_ACCESS_KEY_ID"),</span>
+<span class="c1">#   aws_secret_access_key: ENV.fetch("AWS_SECRET_ACCESS_KEY"),</span>
+<span class="c1">#   bucket: ENV.fetch("AWS_ASPACE_BUCKET"),</span>
+<span class="c1">#   prefix: proc { "#{AppConfig[:cookie_prefix]}_" },</span>
+<span class="c1"># }</span>
+
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:allow_other_unmapped</span><span class="p">]</span> <span class="o">=</span> <span class="kp">false</span>
+
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:db_url_redacted</span><span class="p">]</span> <span class="o">=</span> <span class="nb">proc</span> <span class="p">{</span> <span class="no">AppConfig</span><span class="p">[</span><span class="ss">:db_url</span><span class="p">].</span><span class="nf">gsub</span><span class="p">(</span><span class="sr">/(user|password)=(.*?)(&amp;|$)/</span><span class="p">,</span> <span class="s1">'\1=[REDACTED]\3'</span><span class="p">)</span> <span class="p">}</span>
+
+
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:demo_db_backup_schedule</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"0 4 * * *"</span>
+
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:allow_unsupported_database</span><span class="p">]</span> <span class="o">=</span> <span class="kp">false</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:allow_non_utf8_mysql_database</span><span class="p">]</span> <span class="o">=</span> <span class="kp">false</span>
+
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:demo_db_backup_number_to_keep</span><span class="p">]</span> <span class="o">=</span> <span class="mi">7</span>
+
+<span class="c1"># Proxy URLs</span>
+<span class="c1"># If you are serving user-facing applications via proxy</span>
+<span class="c1"># (i.e., another domain or port, or via https, or for a prefix) it is</span>
+<span class="c1"># recommended that you record those URLs in your configuration</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:frontend_proxy_url</span><span class="p">]</span> <span class="o">=</span> <span class="nb">proc</span> <span class="p">{</span> <span class="no">AppConfig</span><span class="p">[</span><span class="ss">:frontend_url</span><span class="p">]</span> <span class="p">}</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:public_proxy_url</span><span class="p">]</span> <span class="o">=</span> <span class="nb">proc</span> <span class="p">{</span> <span class="no">AppConfig</span><span class="p">[</span><span class="ss">:public_url</span><span class="p">]</span> <span class="p">}</span>
+
+<span class="c1"># Don't override _prefix or _proxy_prefix unless you know what you're doing</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:frontend_proxy_prefix</span><span class="p">]</span> <span class="o">=</span> <span class="nb">proc</span> <span class="p">{</span> <span class="s2">"</span><span class="si">#{</span><span class="no">URI</span><span class="p">(</span><span class="no">AppConfig</span><span class="p">[</span><span class="ss">:frontend_proxy_url</span><span class="p">]).</span><span class="nf">path</span><span class="si">}</span><span class="s2">/"</span><span class="p">.</span><span class="nf">gsub</span><span class="p">(</span><span class="sr">%r{/+$}</span><span class="p">,</span> <span class="s2">"/"</span><span class="p">)</span> <span class="p">}</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:public_proxy_prefix</span><span class="p">]</span> <span class="o">=</span> <span class="nb">proc</span> <span class="p">{</span> <span class="s2">"</span><span class="si">#{</span><span class="no">URI</span><span class="p">(</span><span class="no">AppConfig</span><span class="p">[</span><span class="ss">:public_proxy_url</span><span class="p">]).</span><span class="nf">path</span><span class="si">}</span><span class="s2">/"</span><span class="p">.</span><span class="nf">gsub</span><span class="p">(</span><span class="sr">%r{/+$}</span><span class="p">,</span> <span class="s2">"/"</span><span class="p">)</span> <span class="p">}</span>
+
+<span class="c1"># Setting any of the four keys below to false will prevent the associated</span>
+<span class="c1"># applications from starting. Temporarily disabling the frontend and public</span>
+<span class="c1"># UIs and/or the indexer may help users who are running into memory-related</span>
+<span class="c1"># issues during migration.</span>
+
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:enable_backend</span><span class="p">]</span> <span class="o">=</span> <span class="kp">true</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:enable_frontend</span><span class="p">]</span> <span class="o">=</span> <span class="kp">true</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:enable_public</span><span class="p">]</span> <span class="o">=</span> <span class="kp">true</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:enable_solr</span><span class="p">]</span> <span class="o">=</span> <span class="kp">true</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:enable_indexer</span><span class="p">]</span> <span class="o">=</span> <span class="kp">true</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:enable_docs</span><span class="p">]</span> <span class="o">=</span> <span class="kp">true</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:enable_oai</span><span class="p">]</span> <span class="o">=</span> <span class="kp">true</span>
+
+<span class="c1"># Some use cases want the ability to shutdown the Jetty service using Jetty's</span>
+<span class="c1"># ShutdownHandler, which allows a POST request to a specific URI to signal</span>
+<span class="c1"># server shutdown. The prefix for this URI path is set to /xkcd to reduce the</span>
+<span class="c1"># possibility of a collision in the path configuration. So, full path would be</span>
+<span class="c1"># /xkcd/shutdown?token={randomly generated password}</span>
+<span class="c1"># The launcher creates a password to use this, which is stored</span>
+<span class="c1"># in the data directory. This is not turned on by default.</span>
+<span class="c1">#</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:use_jetty_shutdown_handler</span><span class="p">]</span> <span class="o">=</span> <span class="kp">false</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:jetty_shutdown_path</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"/xkcd"</span>
+
+
+<span class="c1"># If you have multiple instances of the backend running behind a load</span>
+<span class="c1"># balancer, list the URL of each backend instance here.  This is used by the</span>
+<span class="c1"># real-time indexing, which needs to connect directly to each running</span>
+<span class="c1"># instance.</span>
+<span class="c1">#</span>
+<span class="c1"># By default we assume you're not using a load balancer, so we just connect</span>
+<span class="c1"># to the regular backend URL.</span>
+<span class="c1">#</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:backend_instance_urls</span><span class="p">]</span> <span class="o">=</span> <span class="nb">proc</span> <span class="p">{</span> <span class="p">[</span><span class="no">AppConfig</span><span class="p">[</span><span class="ss">:backend_url</span><span class="p">]]</span> <span class="p">}</span>
+
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:frontend_theme</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"default"</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:public_theme</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"default"</span>
+
+<span class="c1"># Sessions marked as expirable will timeout after this number of seconds of inactivity</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:session_expire_after_seconds</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3600</span>
+
+<span class="c1"># Sessions marked as non-expirable will eventually expire too, but after a longer period.</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:session_nonexpirable_force_expire_after_seconds</span><span class="p">]</span> <span class="o">=</span> <span class="mi">604800</span>
+
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:search_username</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"search_indexer"</span>
+
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:public_username</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"public_anonymous"</span>
+
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:staff_username</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"staff_system"</span>
+
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:authentication_sources</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:realtime_index_backlog_ms</span><span class="p">]</span> <span class="o">=</span> <span class="mi">60000</span>
+
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:notifications_backlog_ms</span><span class="p">]</span> <span class="o">=</span> <span class="mi">60000</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:notifications_poll_frequency_ms</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1000</span>
+
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:max_usernames_per_source</span><span class="p">]</span> <span class="o">=</span> <span class="mi">50</span>
+
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:demodb_snapshot_flag</span><span class="p">]</span> <span class="o">=</span> <span class="nb">proc</span> <span class="p">{</span> <span class="no">File</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="no">AppConfig</span><span class="p">[</span><span class="ss">:data_directory</span><span class="p">],</span> <span class="s2">"create_demodb_snapshot.txt"</span><span class="p">)</span> <span class="p">}</span>
+
+<span class="c1"># Report Configuration</span>
+<span class="c1"># :report_page_layout uses valid values for the  CSS3 @page directive's</span>
+<span class="c1"># size property: http://www.w3.org/TR/css3-page/#page-size-prop</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:report_page_layout</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"letter"</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:report_pdf_font_paths</span><span class="p">]</span> <span class="o">=</span> <span class="nb">proc</span> <span class="p">{</span> <span class="p">[</span><span class="s2">"</span><span class="si">#{</span><span class="no">AppConfig</span><span class="p">[</span><span class="ss">:backend_url</span><span class="p">]</span><span class="si">}</span><span class="s2">/reports/static/fonts/dejavu/DejaVuSans.ttf"</span><span class="p">]</span> <span class="p">}</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:report_pdf_font_family</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"</span><span class="se">\"</span><span class="s2">DejaVu Sans</span><span class="se">\"</span><span class="s2">, sans-serif"</span>
+
+<span class="c1"># By default, the plugins directory will be in your ASpace Home.</span>
+<span class="c1"># If you want to override that, update this with an absolute</span>
+<span class="c1"># path</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:plugins_directory</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"plugins"</span>
+
+<span class="c1"># URL to direct the feedback link</span>
+<span class="c1"># You can remove this from the footer by making the value blank.</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:feedback_url</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"http://archivesspace.org/feedback"</span>
+
+<span class="c1"># Allow an unauthenticated user to create an account</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:allow_user_registration</span><span class="p">]</span> <span class="o">=</span> <span class="kp">true</span>
+
+<span class="c1"># Help Configuration</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:help_enabled</span><span class="p">]</span> <span class="o">=</span> <span class="kp">true</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:help_url</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"http://docs.archivesspace.org"</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:help_topic_prefix</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"/Default_CSH.htm#"</span>
+
+
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:shared_storage</span><span class="p">]</span> <span class="o">=</span> <span class="nb">proc</span> <span class="p">{</span> <span class="no">File</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="no">AppConfig</span><span class="p">[</span><span class="ss">:data_directory</span><span class="p">],</span> <span class="s2">"shared"</span><span class="p">)</span> <span class="p">}</span>
+
+<span class="c1"># formerly known as :import_job_path</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:job_file_path</span><span class="p">]</span> <span class="o">=</span> <span class="nb">proc</span> <span class="p">{</span> <span class="no">AppConfig</span><span class="p">.</span><span class="nf">has_key?</span><span class="p">(</span><span class="ss">:import_job_path</span><span class="p">)</span> <span class="p">?</span> <span class="no">AppConfig</span><span class="p">[:</span><span class="n">import_job_path</span><span class="p">]</span> <span class="p">:</span> <span class="no">File</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="no">AppConfig</span><span class="p">[</span><span class="ss">:shared_storage</span><span class="p">],</span> <span class="s2">"job_files"</span><span class="p">)</span> <span class="p">}</span>
+
+<span class="c1"># this too</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:job_poll_seconds</span><span class="p">]</span> <span class="o">=</span> <span class="nb">proc</span> <span class="p">{</span> <span class="no">AppConfig</span><span class="p">.</span><span class="nf">has_key?</span><span class="p">(</span><span class="ss">:import_poll_seconds</span><span class="p">)</span> <span class="p">?</span> <span class="no">AppConfig</span><span class="p">[:</span><span class="n">import_poll_seconds</span><span class="p">]</span> <span class="p">:</span> <span class="mi">5</span> <span class="p">}</span>
+
+<span class="c1"># and this</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:job_timeout_seconds</span><span class="p">]</span> <span class="o">=</span> <span class="nb">proc</span> <span class="p">{</span> <span class="no">AppConfig</span><span class="p">.</span><span class="nf">has_key?</span><span class="p">(</span><span class="ss">:import_timeout_seconds</span><span class="p">)</span> <span class="p">?</span> <span class="no">AppConfig</span><span class="p">[:</span><span class="n">import_timeout_seconds</span><span class="p">]</span> <span class="p">:</span> <span class="mi">300</span> <span class="p">}</span>
+
+
+<span class="c1"># By default, only allow jobs to be cancelled if we're running against MySQL (since we can rollback)</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:jobs_cancelable</span><span class="p">]</span> <span class="o">=</span> <span class="nb">proc</span> <span class="p">{</span> <span class="p">(</span><span class="no">AppConfig</span><span class="p">[</span><span class="ss">:db_url</span><span class="p">]</span> <span class="o">!=</span> <span class="no">AppConfig</span><span class="p">.</span><span class="nf">demo_db_url</span><span class="p">).</span><span class="nf">to_s</span> <span class="p">}</span>
+
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:max_location_range</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1000</span>
+
+<span class="c1"># Schema Info check</span>
+<span class="c1"># ASpace backend will not start if the db's schema_info version is not set</span>
+<span class="c1"># correctly for this version of ASPACE. This is to ensure that all the</span>
+<span class="c1"># migrations have run and completed before starting the app. You can override</span>
+<span class="c1"># this check here. Do so at your own peril.</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:ignore_schema_info_check</span><span class="p">]</span> <span class="o">=</span> <span class="kp">false</span>
+
+<span class="c1"># To use this, set an OS environment variable of ASPACE_DEMO = true</span>
+<span class="c1"># This is the configuration variable to point to some demo data for use in testing,</span>
+<span class="c1"># teaching, etc.</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:demo_data_url</span><span class="p">]</span> <span class="o">=</span> <span class="s2">""</span>
+
+<span class="c1"># Expose external ids in the frontend</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:show_external_ids</span><span class="p">]</span> <span class="o">=</span> <span class="kp">false</span>
+
+<span class="c1">#</span>
+<span class="c1"># This sets the allowed size of the request/response header that Jetty will accept (</span>
+<span class="c1"># anything bigger gets a 403 error ). Note if you want to jack this size up,</span>
+<span class="c1"># you will also have to configure your Nginx/Apache  as well if</span>
+<span class="c1"># you're using that</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:jetty_response_buffer_size_bytes</span><span class="p">]</span> <span class="o">=</span> <span class="mi">64</span> <span class="o">*</span> <span class="mi">1024</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:jetty_request_buffer_size_bytes</span><span class="p">]</span> <span class="o">=</span> <span class="mi">64</span> <span class="o">*</span> <span class="mi">1024</span>
+
+<span class="c1"># Container management configuration fields</span>
+<span class="c1"># :container_management_barcode_length defines global and repo-level barcode validations</span>
+<span class="c1"># (validating on length only).  Barcodes that have either no value, or a value between :min</span>
+<span class="c1"># and :max, will validate on save.  Set global constraints via :system_default, and use</span>
+<span class="c1"># the repo_code value for repository-level constraints.  Note that :system_default will</span>
+<span class="c1"># always inherit down its values when possible.</span>
+<span class="c1">#</span>
+<span class="c1"># Example:</span>
+<span class="c1"># AppConfig[:container_management_barcode_length] = {:system_default =&gt; {:min =&gt; 5, :max =&gt; 10}, 'repo' =&gt; {:min =&gt; 9, :max =&gt; 12}, 'other_repo' =&gt; {:min =&gt; 9, :max =&gt; 9} }</span>
+
+<span class="c1"># :container_management_extent_calculator globally defines the behavior of the exent calculator.</span>
+<span class="c1"># Use :report_volume (true/false) to define whether space should be reported in cubic</span>
+<span class="c1"># or linear dimensions.</span>
+<span class="c1"># Use :unit (:feet, :inches, :meters, :centimeters) to define the unit which the calculator</span>
+<span class="c1"># reports extents in.</span>
+<span class="c1"># Use :decimal_places to define how many decimal places the calculator should return.</span>
+<span class="c1">#</span>
+<span class="c1"># Example:</span>
+<span class="c1"># AppConfig[:container_management_extent_calculator] = { :report_volume =&gt; true, :unit =&gt; :feet, :decimal_places =&gt; 3 }</span>
+
+<span class="c1"># Define the fields for a record type that are inherited from ancestors</span>
+<span class="c1"># if they don't have a value in the record itself.</span>
+<span class="c1"># This is used in common/record_inheritance.rb and was developed to support</span>
+<span class="c1"># the new public UI application.</span>
+<span class="c1"># Note - any changes to record_inheritance config will require a reindex of pui</span>
+<span class="c1"># records to take affect. To do this remove files from indexer_pui_state</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:record_inheritance</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="ss">:archival_object</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="ss">:inherited_fields</span> <span class="o">=&gt;</span> <span class="p">[</span>
+                          <span class="p">{</span>
+                            <span class="ss">:property</span> <span class="o">=&gt;</span> <span class="s1">'title'</span><span class="p">,</span>
+                            <span class="ss">:inherit_directly</span> <span class="o">=&gt;</span> <span class="kp">true</span>
+                          <span class="p">},</span>
+                          <span class="p">{</span>
+                            <span class="ss">:property</span> <span class="o">=&gt;</span> <span class="s1">'component_id'</span><span class="p">,</span>
+                            <span class="ss">:inherit_directly</span> <span class="o">=&gt;</span> <span class="kp">false</span>
+                          <span class="p">},</span>
+                          <span class="p">{</span>
+                            <span class="ss">:property</span> <span class="o">=&gt;</span> <span class="s1">'language'</span><span class="p">,</span>
+                            <span class="ss">:inherit_directly</span> <span class="o">=&gt;</span> <span class="kp">true</span>
+                          <span class="p">},</span>
+                          <span class="p">{</span>
+                            <span class="ss">:property</span> <span class="o">=&gt;</span> <span class="s1">'dates'</span><span class="p">,</span>
+                            <span class="ss">:inherit_directly</span> <span class="o">=&gt;</span> <span class="kp">true</span>
+                          <span class="p">},</span>
+                          <span class="p">{</span>
+                            <span class="ss">:property</span> <span class="o">=&gt;</span> <span class="s1">'extents'</span><span class="p">,</span>
+                            <span class="ss">:inherit_directly</span> <span class="o">=&gt;</span> <span class="kp">false</span>
+                          <span class="p">},</span>
+                          <span class="p">{</span>
+                            <span class="ss">:property</span> <span class="o">=&gt;</span> <span class="s1">'linked_agents'</span><span class="p">,</span>
+                            <span class="ss">:inherit_if</span> <span class="o">=&gt;</span> <span class="nb">proc</span> <span class="p">{</span><span class="o">|</span><span class="n">json</span><span class="o">|</span> <span class="n">json</span><span class="p">.</span><span class="nf">select</span> <span class="p">{</span><span class="o">|</span><span class="n">j</span><span class="o">|</span> <span class="n">j</span><span class="p">[</span><span class="s1">'role'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'creator'</span><span class="p">}</span> <span class="p">},</span>
+                            <span class="ss">:inherit_directly</span> <span class="o">=&gt;</span> <span class="kp">false</span>
+                          <span class="p">},</span>
+                          <span class="p">{</span>
+                            <span class="ss">:property</span> <span class="o">=&gt;</span> <span class="s1">'notes'</span><span class="p">,</span>
+                            <span class="ss">:inherit_if</span> <span class="o">=&gt;</span> <span class="nb">proc</span> <span class="p">{</span><span class="o">|</span><span class="n">json</span><span class="o">|</span> <span class="n">json</span><span class="p">.</span><span class="nf">select</span> <span class="p">{</span><span class="o">|</span><span class="n">j</span><span class="o">|</span> <span class="n">j</span><span class="p">[</span><span class="s1">'type'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'accessrestrict'</span><span class="p">}</span> <span class="p">},</span>
+                            <span class="ss">:inherit_directly</span> <span class="o">=&gt;</span> <span class="kp">true</span>
+                          <span class="p">},</span>
+                          <span class="p">{</span>
+                            <span class="ss">:property</span> <span class="o">=&gt;</span> <span class="s1">'notes'</span><span class="p">,</span>
+                            <span class="ss">:inherit_if</span> <span class="o">=&gt;</span> <span class="nb">proc</span> <span class="p">{</span><span class="o">|</span><span class="n">json</span><span class="o">|</span> <span class="n">json</span><span class="p">.</span><span class="nf">select</span> <span class="p">{</span><span class="o">|</span><span class="n">j</span><span class="o">|</span> <span class="n">j</span><span class="p">[</span><span class="s1">'type'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'scopecontent'</span><span class="p">}</span> <span class="p">},</span>
+                            <span class="ss">:inherit_directly</span> <span class="o">=&gt;</span> <span class="kp">false</span>
+                          <span class="p">},</span>
+                          <span class="p">{</span>
+                            <span class="ss">:property</span> <span class="o">=&gt;</span> <span class="s1">'notes'</span><span class="p">,</span>
+                            <span class="ss">:inherit_if</span> <span class="o">=&gt;</span> <span class="nb">proc</span> <span class="p">{</span><span class="o">|</span><span class="n">json</span><span class="o">|</span> <span class="n">json</span><span class="p">.</span><span class="nf">select</span> <span class="p">{</span><span class="o">|</span><span class="n">j</span><span class="o">|</span> <span class="n">j</span><span class="p">[</span><span class="s1">'type'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'langmaterial'</span><span class="p">}</span> <span class="p">},</span>
+                            <span class="ss">:inherit_directly</span> <span class="o">=&gt;</span> <span class="kp">false</span>
+                          <span class="p">},</span>
+                         <span class="p">]</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1"># To enable composite identifiers - added to the merged record in a property _composite_identifier</span>
+<span class="c1"># The values for :include_level and :identifier_delimiter shown here are the defaults</span>
+<span class="c1"># If :include_level is set to true then level values (eg Series) will be included in _composite_identifier</span>
+<span class="c1"># The :identifier_delimiter is used when joining the four part identifier for resources</span>
+<span class="c1">#AppConfig[:record_inheritance][:archival_object][:composite_identifiers] = {</span>
+<span class="c1">#  :include_level =&gt; false,</span>
+<span class="c1">#  :identifier_delimiter =&gt; ' '</span>
+<span class="c1">#}</span>
+
+<span class="c1"># To configure additional elements to be inherited use this pattern in your config</span>
+<span class="c1">#AppConfig[:record_inheritance][:archival_object][:inherited_fields] &lt;&lt;</span>
+<span class="c1">#  {</span>
+<span class="c1">#    :property =&gt; 'linked_agents',</span>
+<span class="c1">#    :inherit_if =&gt; proc {|json| json.select {|j| j['role'] == 'subject'} },</span>
+<span class="c1">#    :inherit_directly =&gt; true</span>
+<span class="c1">#  }</span>
+<span class="c1"># ... or use this pattern to add many new elements at once</span>
+<span class="c1">#AppConfig[:record_inheritance][:archival_object][:inherited_fields].concat(</span>
+<span class="c1">#  [</span>
+<span class="c1">#    {</span>
+<span class="c1">#      :property =&gt; 'subjects',</span>
+<span class="c1">#      :inherit_if =&gt; proc {|json|</span>
+<span class="c1">#        json.select {|j|</span>
+<span class="c1">#          ! j['_resolved']['terms'].select { |t| t['term_type'] == 'topical'}.empty?</span>
+<span class="c1">#        }</span>
+<span class="c1">#      },</span>
+<span class="c1">#      :inherit_directly =&gt; true</span>
+<span class="c1">#    },</span>
+<span class="c1">#    {</span>
+<span class="c1">#      :property =&gt; 'external_documents',</span>
+<span class="c1">#      :inherit_directly =&gt; false</span>
+<span class="c1">#    },</span>
+<span class="c1">#    {</span>
+<span class="c1">#      :property =&gt; 'rights_statements',</span>
+<span class="c1">#      :inherit_directly =&gt; false</span>
+<span class="c1">#    },</span>
+<span class="c1">#    {</span>
+<span class="c1">#      :property =&gt; 'instances',</span>
+<span class="c1">#      :inherit_directly =&gt; false</span>
+<span class="c1">#    },</span>
+<span class="c1">#  ])</span>
+
+<span class="c1"># If you want to modify any of the default rules, the safest approach is to uncomment</span>
+<span class="c1"># the entire default record_inheritance config and make your changes.</span>
+<span class="c1"># For example, to stop scopecontent notes from being inherited into file or item records</span>
+<span class="c1"># uncomment the entire record_inheritance default config above, and add a skip_if</span>
+<span class="c1"># clause to the scopecontent rule, like this:</span>
+<span class="c1">#  {</span>
+<span class="c1">#    :property =&gt; 'notes',</span>
+<span class="c1">#    :skip_if =&gt; proc {|json| ['file', 'item'].include?(json['level']) },</span>
+<span class="c1">#    :inherit_if =&gt; proc {|json| json.select {|j| j['type'] == 'scopecontent'} },</span>
+<span class="c1">#    :inherit_directly =&gt; false</span>
+<span class="c1">#  },</span>
+
+<span class="c1"># PUI Configurations</span>
+<span class="c1"># TODO: Clean up configuration options</span>
+
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:pui_search_results_page_size</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:pui_branding_img</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'archivesspace.small.png'</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:pui_block_referrer</span><span class="p">]</span> <span class="o">=</span> <span class="kp">true</span> <span class="c1"># patron privacy; blocks full 'referer' when going outside the domain</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:pui_enable_staff_link</span><span class="p">]</span> <span class="o">=</span> <span class="kp">true</span> <span class="c1"># attempt to add a link back to the staff interface</span>
+
+<span class="c1"># The number of PDFs we'll generate (in the background) at the same time.</span>
+<span class="c1">#</span>
+<span class="c1"># PDF generation can be a little memory intensive for large collections, so we</span>
+<span class="c1"># set this fairly low out of the box.</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:pui_max_concurrent_pdfs</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="c1"># You can set this to nil or zero to prevent a timeout</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:pui_pdf_timeout</span><span class="p">]</span> <span class="o">=</span> <span class="mi">600</span>
+
+<span class="c1"># The following determine which 'tabs' are on the main horizontal menu</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:pui_hide</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:pui_hide</span><span class="p">][</span><span class="ss">:repositories</span><span class="p">]</span> <span class="o">=</span> <span class="kp">false</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:pui_hide</span><span class="p">][</span><span class="ss">:resources</span><span class="p">]</span> <span class="o">=</span> <span class="kp">false</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:pui_hide</span><span class="p">][</span><span class="ss">:digital_objects</span><span class="p">]</span> <span class="o">=</span> <span class="kp">false</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:pui_hide</span><span class="p">][</span><span class="ss">:accessions</span><span class="p">]</span> <span class="o">=</span> <span class="kp">false</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:pui_hide</span><span class="p">][</span><span class="ss">:subjects</span><span class="p">]</span> <span class="o">=</span> <span class="kp">false</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:pui_hide</span><span class="p">][</span><span class="ss">:agents</span><span class="p">]</span> <span class="o">=</span> <span class="kp">false</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:pui_hide</span><span class="p">][</span><span class="ss">:classifications</span><span class="p">]</span> <span class="o">=</span> <span class="kp">false</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:pui_hide</span><span class="p">][</span><span class="ss">:search_tab</span><span class="p">]</span> <span class="o">=</span> <span class="kp">false</span>
+<span class="c1"># The following determine globally whether the various "badges" appear on the Repository page</span>
+<span class="c1"># can be overriden at repository level below (e.g.:  AppConfig[:repos][{repo_code}][:hide][:counts] = true</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:pui_hide</span><span class="p">][</span><span class="ss">:resource_badge</span><span class="p">]</span> <span class="o">=</span> <span class="kp">false</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:pui_hide</span><span class="p">][</span><span class="ss">:record_badge</span><span class="p">]</span> <span class="o">=</span> <span class="kp">true</span> <span class="c1"># hide by default</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:pui_hide</span><span class="p">][</span><span class="ss">:digital_object_badge</span><span class="p">]</span> <span class="o">=</span> <span class="kp">false</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:pui_hide</span><span class="p">][</span><span class="ss">:accession_badge</span><span class="p">]</span> <span class="o">=</span> <span class="kp">false</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:pui_hide</span><span class="p">][</span><span class="ss">:subject_badge</span><span class="p">]</span> <span class="o">=</span> <span class="kp">false</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:pui_hide</span><span class="p">][</span><span class="ss">:agent_badge</span><span class="p">]</span> <span class="o">=</span> <span class="kp">false</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:pui_hide</span><span class="p">][</span><span class="ss">:classification_badge</span><span class="p">]</span> <span class="o">=</span> <span class="kp">false</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:pui_hide</span><span class="p">][</span><span class="ss">:counts</span><span class="p">]</span> <span class="o">=</span> <span class="kp">false</span>
+<span class="c1"># The following determines globally whether the 'container inventory' navigation tab/pill is hidden on resource/collection page</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:pui_hide</span><span class="p">][</span><span class="ss">:container_inventory</span><span class="p">]</span> <span class="o">=</span> <span class="kp">false</span>
+<span class="c1"># Other usage examples:</span>
+<span class="c1"># Don't display the accession ("unprocessed material") link on the main navigation menu</span>
+<span class="c1"># AppConfig[:pui_hide][:accessions] = true</span>
+
+<span class="c1"># the following determine when the request button is displayed</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:pui_requests_permitted_for_types</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="ss">:resource</span><span class="p">,</span> <span class="ss">:archival_object</span><span class="p">,</span> <span class="ss">:accession</span><span class="p">,</span> <span class="ss">:digital_object</span><span class="p">,</span> <span class="ss">:digital_object_component</span><span class="p">]</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:pui_requests_permitted_for_containers_only</span><span class="p">]</span> <span class="o">=</span> <span class="kp">false</span> <span class="c1"># set to 'true' if you want to disable if there is no top container</span>
+
+<span class="c1"># Repository-specific examples.  Replace {repo_code} with your repository code, i.e. 'foo' - note the lower-case</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:pui_repos</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="c1"># Example:</span>
+<span class="c1"># AppConfig[:pui_repos]['foo'] = {}</span>
+<span class="c1"># AppConfig[:pui_repos]['foo'][:requests_permitted_for_types] = [:resource, :archival_object, :accession, :digital_object, :digital_object_component] # for a particular repository, only enable requests for certain record types (Note this configuration will override AppConfig[:pui_requests_permitted_for_types] for the repository)</span>
+<span class="c1"># AppConfig[:pui_repos]['foo'][:requests_permitted_for_containers_only] = true # for a particular repository ,disable request</span>
+<span class="c1"># AppConfig[:pui_repos]['foo'][:request_email] = {email address} # the email address to send any repository requests</span>
+<span class="c1"># AppConfig[:pui_repos]['foo'][:hide] = {}</span>
+<span class="c1"># AppConfig[:pui_repos]['foo'][:hide][:counts] = true</span>
+
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:pui_display_deaccessions</span><span class="p">]</span> <span class="o">=</span> <span class="kp">true</span>
+
+<span class="c1"># Enable / disable PUI resource/archival object page actions</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:pui_page_actions_cite</span><span class="p">]</span> <span class="o">=</span> <span class="kp">true</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:pui_page_actions_bookmark</span><span class="p">]</span> <span class="o">=</span> <span class="kp">true</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:pui_page_actions_request</span><span class="p">]</span> <span class="o">=</span> <span class="kp">true</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:pui_page_actions_print</span><span class="p">]</span> <span class="o">=</span> <span class="kp">true</span>
+
+<span class="c1"># Add page actions via the configuration</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:pui_page_custom_actions</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="c1"># Examples:</span>
+<span class="c1"># Javascript action example:</span>
+<span class="c1"># AppConfig[:pui_page_custom_actions] &lt;&lt; {</span>
+<span class="c1">#   'record_type' =&gt; ['resource', 'archival_object'], # the jsonmodel type to show for</span>
+<span class="c1">#   'label' =&gt; 'actions.do_something', # the I18n path for the action button</span>
+<span class="c1">#   'icon' =&gt; 'fa-paw', # the font-awesome icon CSS class</span>
+<span class="c1">#   'onclick_javascript' =&gt; 'alert("do something grand");',</span>
+<span class="c1"># }</span>
+<span class="c1"># # Hyperlink action example:</span>
+<span class="c1"># AppConfig[:pui_page_custom_actions] &lt;&lt; {</span>
+<span class="c1">#   'record_type' =&gt; ['resource', 'archival_object'], # the jsonmodel type to show for</span>
+<span class="c1">#   'label' =&gt; 'actions.do_something', # the I18n path for the action button</span>
+<span class="c1">#   'icon' =&gt; 'fa-paw', # the font-awesome icon CSS class</span>
+<span class="c1">#   'url_proc' =&gt; proc {|record| 'http://example.com/aspace?uri='+record.uri},</span>
+<span class="c1"># }</span>
+<span class="c1"># # Form-POST action example:</span>
+<span class="c1"># AppConfig[:pui_page_custom_actions] &lt;&lt; {</span>
+<span class="c1">#   'record_type' =&gt; ['resource', 'archival_object'], # the jsonmodel type to show for</span>
+<span class="c1">#   'label' =&gt; 'actions.do_something', # the I18n path for the action button</span>
+<span class="c1">#   'icon' =&gt; 'fa-paw', # the font-awesome icon CSS class</span>
+<span class="c1">#   # 'post_params_proc' returns a hash of params which populates a form with hidden inputs ('name' =&gt; 'value')</span>
+<span class="c1">#   'post_params_proc' =&gt; proc {|record| {'uri' =&gt; record.uri, 'display_string' =&gt; record.display_string} },</span>
+<span class="c1">#   # 'url_proc' returns the URL for the form to POST to</span>
+<span class="c1">#   'url_proc' =&gt; proc {|record| 'http://example.com/aspace?uri='+record.uri},</span>
+<span class="c1">#   # 'form_id' as string to be used as the form's ID</span>
+<span class="c1">#   'form_id' =&gt; 'my_grand_action',</span>
+<span class="c1"># }</span>
+<span class="c1"># # ERB action example:</span>
+<span class="c1"># AppConfig[:pui_page_custom_actions] &lt;&lt; {</span>
+<span class="c1">#   'record_type' =&gt; ['resource', 'archival_object'], # the jsonmodel type to show for</span>
+<span class="c1">#   # 'erb_partial' returns the path to an erb template from which the action will be rendered</span>
+<span class="c1">#   'erb_partial' =&gt; 'shared/my_special_action',</span>
+<span class="c1"># }</span>
+
+<span class="c1"># PUI email settings (logs emails when disabled)</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:pui_email_enabled</span><span class="p">]</span> <span class="o">=</span> <span class="kp">false</span>
+
+<span class="c1"># See above AppConfig[:pui_repos][{repo_code}][:request_email] for setting repository email overrides</span>
+<span class="c1"># 'pui_email_override' for testing, this email will be the to-address for all sent emails</span>
+<span class="c1"># AppConfig[:pui_email_override] = 'testing@example.com'</span>
+<span class="c1"># 'pui_request_email_fallback_to_address' the 'to' email address for repositories that don't define their own email</span>
+<span class="c1">#AppConfig[:pui_request_email_fallback_to_address] = 'testing@example.com'</span>
+<span class="c1"># 'pui_request_email_fallback_from_address' the 'from' email address for repositories that don't define their own email</span>
+<span class="c1">#AppConfig[:pui_request_email_fallback_from_address] = 'testing@example.com'</span>
+
+<span class="c1"># use the repository record email address for requests (overrides config email)</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:pui_request_use_repo_email</span><span class="p">]</span> <span class="o">=</span> <span class="kp">false</span>
+
+<span class="c1"># Example sendmail configuration:</span>
+<span class="c1"># AppConfig[:pui_email_delivery_method] = :sendmail</span>
+<span class="c1"># AppConfig[:pui_email_sendmail_settings] = {</span>
+<span class="c1">#   location: '/usr/sbin/sendmail',</span>
+<span class="c1">#   arguments: '-i'</span>
+<span class="c1"># }</span>
+<span class="c1">#AppConfig[:pui_email_perform_deliveries] = true</span>
+<span class="c1">#AppConfig[:pui_email_raise_delivery_errors] = true</span>
+<span class="c1"># Example SMTP configuration:</span>
+<span class="c1">#AppConfig[:pui_email_delivery_method] = :smtp</span>
+<span class="c1">#AppConfig[:pui_email_smtp_settings] = {</span>
+<span class="c1">#      address:              'smtp.gmail.com',</span>
+<span class="c1">#      port:                 587,</span>
+<span class="c1">#      domain:               'gmail.com',</span>
+<span class="c1">#      user_name:            '&lt;username&gt;',</span>
+<span class="c1">#      password:             '&lt;password&gt;',</span>
+<span class="c1">#      authentication:       'plain',</span>
+<span class="c1">#      enable_starttls_auto: true,</span>
+<span class="c1">#}</span>
+<span class="c1">#AppConfig[:pui_email_perform_deliveries] = true</span>
+<span class="c1">#AppConfig[:pui_email_raise_delivery_errors] = true</span>
+
+<span class="c1">#The number of characters to truncate before showing the 'Read More' link on notes</span>
+<span class="no">AppConfig</span><span class="p">[</span><span class="ss">:pui_readmore_max_characters</span><span class="p">]</span> <span class="o">=</span> <span class="mi">450</span>
+</code></pre></div></div>
+
+        </main>
+      </div><!-- /#content -->
+
+      <footer>
+  <div class="row">
+  </div>
+</footer>
+
+    </div><!-- /.wrapper -->
+  </body>
+</html>

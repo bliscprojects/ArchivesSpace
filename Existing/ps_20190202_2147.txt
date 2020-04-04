@@ -1,0 +1,110 @@
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.0  0.0 189440  3848 ?        Ss    2018   3:46 /usr/lib/systemd/systemd --switched-root --system --deserialize 21
+root         2  0.0  0.0      0     0 ?        S     2018   0:00 [kthreadd]
+root         3  0.0  0.0      0     0 ?        S     2018   0:11 [ksoftirqd/0]
+root         5  0.0  0.0      0     0 ?        S<    2018   0:00 [kworker/0:0H]
+root         7  0.0  0.0      0     0 ?        S     2018   0:00 [migration/0]
+root         8  0.0  0.0      0     0 ?        S     2018   0:00 [rcu_bh]
+root         9  0.0  0.0      0     0 ?        S     2018   0:00 [rcuob/0]
+root        10  0.0  0.0      0     0 ?        R     2018   2:15 [rcu_sched]
+root        11  0.0  0.0      0     0 ?        S     2018   3:56 [rcuos/0]
+root        12  0.0  0.0      0     0 ?        S     2018   0:26 [watchdog/0]
+root        13  0.0  0.0      0     0 ?        S<    2018   0:00 [khelper]
+root        14  0.0  0.0      0     0 ?        S     2018   0:00 [kdevtmpfs]
+root        15  0.0  0.0      0     0 ?        S<    2018   0:00 [netns]
+root        16  0.0  0.0      0     0 ?        S<    2018   0:00 [perf]
+root        17  0.0  0.0      0     0 ?        S<    2018   0:00 [writeback]
+root        18  0.0  0.0      0     0 ?        S<    2018   0:00 [kintegrityd]
+root        19  0.0  0.0      0     0 ?        S<    2018   0:00 [bioset]
+root        20  0.0  0.0      0     0 ?        S<    2018   0:00 [kblockd]
+root        21  0.0  0.0      0     0 ?        S<    2018   0:00 [md]
+root        26  0.0  0.0      0     0 ?        S     2018   0:02 [khungtaskd]
+root        27  0.0  0.0      0     0 ?        S     2018   0:11 [kswapd0]
+root        28  0.0  0.0      0     0 ?        SN    2018   0:00 [ksmd]
+root        29  0.0  0.0      0     0 ?        SN    2018   0:23 [khugepaged]
+root        30  0.0  0.0      0     0 ?        S     2018   0:00 [fsnotify_mark]
+root        31  0.0  0.0      0     0 ?        S<    2018   0:00 [crypto]
+root        39  0.0  0.0      0     0 ?        S<    2018   0:00 [kthrotld]
+root        41  0.0  0.0      0     0 ?        S<    2018   0:00 [kmpath_rdacd]
+root        42  0.0  0.0      0     0 ?        S<    2018   0:00 [kpsmoused]
+root        44  0.0  0.0      0     0 ?        S<    2018   0:00 [ipv6_addrconf]
+root        63  0.0  0.0      0     0 ?        S<    2018   0:00 [deferwq]
+root        93  0.0  0.0      0     0 ?        S     2018   0:00 [kauditd]
+root       223  0.0  0.0      0     0 ?        S<    2018   0:00 [ata_sff]
+root       224  0.0  0.0      0     0 ?        S<    2018   0:00 [mpt_poll_0]
+root       226  0.0  0.0      0     0 ?        S<    2018   0:00 [mpt/0]
+root       229  0.0  0.0      0     0 ?        S<    2018   0:00 [events_power_ef]
+root       236  0.0  0.0      0     0 ?        S     2018   0:00 [scsi_eh_0]
+root       237  0.0  0.0      0     0 ?        S<    2018   0:00 [scsi_tmf_0]
+root       243  0.0  0.0      0     0 ?        S     2018   0:00 [scsi_eh_1]
+root       246  0.0  0.0      0     0 ?        S<    2018   0:00 [scsi_tmf_1]
+root       248  0.0  0.0      0     0 ?        S     2018   0:00 [scsi_eh_2]
+root       249  0.0  0.0      0     0 ?        S<    2018   0:00 [scsi_tmf_2]
+root       251  0.0  0.0      0     0 ?        S<    2018   0:00 [ttm_swap]
+root       271  0.0  0.0      0     0 ?        S     2018   3:01 [jbd2/sda1-8]
+root       272  0.0  0.0      0     0 ?        S<    2018   0:00 [ext4-rsv-conver]
+root       273  0.0  0.0      0     0 ?        S<    2018   0:00 [ext4-unrsv-conv]
+root       316  0.0  0.0 196092  3428 pts/2    S    21:14   0:00 sudo su
+root       317  0.0  0.0 185588  2304 pts/2    S    21:14   0:00 su
+root       318  0.0  0.0 115516  2160 pts/2    S    21:14   0:00 bash
+root       346  0.0  0.2  45012 11352 ?        Ss    2018   0:32 /usr/lib/systemd/systemd-journald
+root       366  0.0  0.0  43204   920 ?        Ss    2018   0:00 /usr/lib/systemd/systemd-udevd
+root       378  0.0  0.0 116748  1368 ?        S<sl  2018   0:08 /sbin/auditd -n
+root       383  0.0  0.1 143400  5460 ?        Ss   21:19   0:00 sshd: archives [priv]
+archives   385  0.0  0.0 143400  2200 ?        S    21:19   0:00 sshd: archives@pts/3
+archives   386  0.0  0.0 115384  2020 pts/3    Ss+  21:19   0:00 -bash
+root       431  0.0  0.0  26400  1492 ?        Ss    2018   0:50 /usr/lib/systemd/systemd-logind
+root       435  0.0  0.2 352276  8416 ?        Ssl   2018   0:08 /usr/sbin/rsyslogd -n
+root       438  0.0  0.1 333544  4264 ?        Ssl   2018   0:03 /usr/bin/python -Es /usr/sbin/firewalld --nofork --nopid
+dbus       441  0.0  0.0  26928  1484 ?        Ss    2018   2:05 /bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation
+chrony     444  0.0  0.0 115844  1168 ?        S     2018   0:07 /usr/sbin/chronyd
+root       454  0.0  0.0 126332  1024 ?        Ss    2018   0:09 /usr/sbin/crond -n
+root       495  0.0  0.1 143400  5460 ?        Ss   21:20   0:00 sshd: archives [priv]
+archives   499  0.0  0.0 143400  2200 ?        S    21:21   0:00 sshd: archives@pts/4
+archives   501  0.0  0.0 115384  1992 pts/4    Ss   21:21   0:00 -bash
+root       510  0.0  0.1 440124  4288 ?        Ssl   2018   0:14 /usr/sbin/NetworkManager --no-daemon
+archives   520  0.1  0.0 157552  2136 pts/4    S+   21:21   0:01 top
+postfix    538  0.0  0.0  91244  3892 ?        S    21:21   0:00 pickup -l -t unix -u
+root       715  0.0  0.0  53064  1668 ?        Ss    2018   0:00 /usr/sbin/wpa_supplicant -u -f /var/log/wpa_supplicant.log -c /etc/wpa_supplicant/wpa_supplicant.conf -u -f /var/log/wpa_supplicant.log -P /var/run/wpa_supplicant.pid
+polkitd    716  0.0  0.0 527988  2772 ?        Ssl   2018   0:03 /usr/lib/polkit-1/polkitd --no-debug
+apache    1013  0.0  0.2 1533792 10644 ?       S    21:45   0:00 /usr/sbin/httpd -DFOREGROUND
+apache    1015  0.0  0.2 1533792 10644 ?       S    21:45   0:00 /usr/sbin/httpd -DFOREGROUND
+apache    1017  0.0  0.2 1533792 10644 ?       S    21:46   0:00 /usr/sbin/httpd -DFOREGROUND
+root      1018  0.0  0.0  82560  2860 ?        Ss    2018   0:15 /usr/sbin/sshd -D
+apache    1021  0.0  0.2 1533792 10644 ?       S    21:47   0:00 /usr/sbin/httpd -DFOREGROUND
+apache    1023  0.0  0.2 1533792 10644 ?       S    21:47   0:00 /usr/sbin/httpd -DFOREGROUND
+apache    1024  0.0  0.2 1533792 10644 ?       S    21:47   0:00 /usr/sbin/httpd -DFOREGROUND
+root      1025  0.0  0.0 553064  3416 ?        Ssl   2018   9:35 /usr/bin/python -Es /usr/sbin/tuned -l -P
+root      1027  0.0  0.0 151032  1828 pts/2    R+   21:47   0:00 ps aux
+root      1365  0.0  0.0  91140  1156 ?        Ss    2018   0:14 /usr/libexec/postfix/master -w
+postfix   1369  0.0  0.0  91420  3032 ?        S     2018   0:03 qmgr -l -t unix -u
+root      1994  0.0  0.0      0     0 ?        S<    2018   0:00 [kworker/0:1H]
+root      2513  0.0  0.0 110528  2680 ?        S     2018   0:00 /sbin/dhclient -d -q -sf /usr/libexec/nm-dhcp-helper -pf /var/run/dhclient-ens32.pid -lf /var/lib/NetworkManager/dhclient-508bef25-c016-48de-be3f-ec84704967f0-ens32.lease -cf /var/lib/NetworkManager/dhclient-ens32.conf ens32
+mysql    14363  0.0  0.0 113256   628 ?        Ss    2018   0:00 /bin/sh /usr/bin/mysqld_safe --basedir=/usr
+mysql    14521  0.4  5.2 1174792 210644 ?      Sl    2018 435:59 /usr/libexec/mysqld --basedir=/usr --datadir=/var/lib/mysql --plugin-dir=/usr/lib64/mysql/plugin --log-error=/var/log/mariadb/mariadb.log --pid-file=/var/run/mariadb/mariadb.pid --socket=/var/lib/mysql/mysql.sock
+root     22050  0.0  0.0 125760  1268 ?        Ss   Jan24   2:26 SCREEN
+root     22051  0.0  0.0 115516  1172 pts/1    Ss   Jan24   0:00 /bin/bash
+root     22060  0.0  0.0 113124   892 pts/1    S+   Jan24   0:00 /bin/bash ./archivesspace.sh
+root     22078  0.0  0.0 113124   376 pts/1    S+   Jan24   0:00 /bin/bash ./archivesspace.sh
+root     22079  0.0  0.0 113120   816 pts/1    S+   Jan24   0:00 bash -c java -Darchivesspace-daemon=yes -Djava.security.egd=file:/dev/./urandom          -XX:+CMSClassUnloadingEnabled -XX:+UseConcMarkSweepGC -XX:NewRatio=1 -Xmx1024m -Xss2m -XX:MaxPermSize=256m -Dfile.encoding=UTF-8         -cp "lib/*:launcher/lib/*:/var/www/html/archivesspace/gems/gems/jruby-jars-9.1.8.0/lib/*:/var/www/html/archivesspace/gems/gems/jruby-rack-1.1.21/lib/*"         org.jruby.Main --disable-gems "launcher/launcher.rb" 2>&1 | tee 'logs/archivesspace.out'
+root     22080 35.2 47.1 3763380 1908480 pts/1 Sl+  Jan24 4645:14 java -Darchivesspace-daemon=yes -Djava.security.egd=file:/dev/./urandom -XX:+CMSClassUnloadingEnabled -XX:+UseConcMarkSweepGC -XX:NewRatio=1 -Xmx1024m -Xss2m -XX:MaxPermSize=256m -Dfile.encoding=UTF-8 -cp lib/*:launcher/lib/*:/var/www/html/archivesspace/gems/gems/jruby-jars-9.1.8.0/lib/*:/var/www/html/archivesspace/gems/gems/jruby-rack-1.1.21/lib/* org.jruby.Main --disable-gems launcher/launcher.rb
+root     22081  0.0  0.0 107896   612 pts/1    S+   Jan24   1:38 tee logs/archivesspace.out
+root     25388  0.0  0.0 110036   668 tty1     Ss+   2018   0:00 /sbin/agetty --noclear tty1 linux
+root     26231  0.0  0.4 1533660 19348 ?       Ss   Jan25   2:31 /usr/sbin/httpd -DFOREGROUND
+root     29564  0.0  0.1 143400  5460 ?        Ss   14:48   0:00 sshd: it [priv]
+it       29566  0.0  0.0 143544  2204 ?        S    14:48   0:00 sshd: it@pts/0
+it       29567  0.0  0.0 115388  2016 pts/0    Ss   14:48   0:00 -bash
+root     29587  0.0  0.0 196064  3372 pts/0    S    14:48   0:00 sudo su
+root     29593  0.0  0.0 185560  2252 pts/0    S    14:48   0:00 su
+root     29594  0.0  0.0 115516  2160 pts/0    S+   14:48   0:00 bash
+root     29886  0.0  0.0      0     0 ?        S    15:06   0:00 [kworker/u2:2]
+root     30307  0.0  0.0      0     0 ?        S    16:01   0:00 [kworker/0:3]
+root     30384  0.0  0.0      0     0 ?        S    16:06   0:03 [kworker/0:1]
+root     30411  0.0  0.0      0     0 ?        S    16:11   0:06 [kworker/0:0]
+root     32092  0.0  0.0      0     0 ?        S    19:41   0:00 [kworker/u2:1]
+root     32285  0.0  0.1 143400  5564 ?        Ss   20:05   0:00 sshd: archives [priv]
+archives 32287  0.0  0.0 143544  2348 ?        S    20:05   0:03 sshd: archives@notty
+archives 32288  0.0  0.0  52816  2236 ?        Ss   20:05   0:01 /usr/libexec/openssh/sftp-server
+root     32764  0.0  0.1 143400  5460 ?        Ss   21:14   0:00 sshd: archives [priv]
+archives 32766  0.0  0.0 143544  2204 ?        S    21:14   0:00 sshd: archives@pts/2
+archives 32767  0.0  0.0 115384  1992 pts/2    Ss   21:14   0:00 -bash
